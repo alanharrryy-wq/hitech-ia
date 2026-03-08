@@ -3,6 +3,12 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from command_policy import (
+    normalize_command_spec,
+    normalize_test_cwd,
+    normalize_test_env,
+    normalize_test_timeout,
+)
 from common import (
     SUPPORTED_TARGET_MODES,
     SUPPORTED_TEST_TYPES,
@@ -75,7 +81,6 @@ def _normalize_target(
     except ValueError as exc:
         raise ValidationError(f"targets[{index}] source escapes extraction root: {source_rel}") from exc
 
-    # Destination safety and policy check.
     resolve_repo_destination(repo_root, destination_rel)
 
     if not source_path.exists() and required:
@@ -97,18 +102,22 @@ def _normalize_test(test: dict, *, index: int) -> dict:
     if test_type not in SUPPORTED_TEST_TYPES:
         raise ValidationError(f"tests[{index}] unsupported type: {test_type}")
 
-    command = str(test.get("command", "")).strip()
-    if not command:
-        raise ValidationError(f"tests[{index}] command is required")
-
+    args, display_command = normalize_command_spec(test, index=index)
     name = str(test.get("name", f"test_{index + 1}"))
     required = bool(test.get("required", True))
+    cwd = normalize_test_cwd(test.get("cwd", "."), index=index)
+    timeout_sec = normalize_test_timeout(test.get("timeout_sec"), index=index)
+    env = normalize_test_env(test.get("env"), index=index)
 
     return {
         "name": name,
         "type": test_type,
-        "command": command,
+        "command": display_command,
+        "args": args,
         "required": required,
+        "cwd": cwd,
+        "timeout_sec": timeout_sec,
+        "env": env,
     }
 
 

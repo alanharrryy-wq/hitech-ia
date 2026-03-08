@@ -1,0 +1,19 @@
+{
+  "pack_name": "HITECH-IA ZIP Inbox Hardening Delta Pack",
+  "pack_version": "2026.03.08",
+  "pack_type": "delta_hardening",
+  "target_repo": "alanharrryy-wq/hitech-ia",
+  "recommended_base_commit": "0451d7e",
+  "intent": "Apply only hardening and minimal contract updates on top of the existing ZIP inbox runtime. Avoid re-adding completion-pack files that are already implemented.",
+  "apply_mode": "copy_full_files_then_run_tests",
+  "contains": [
+    "command execution hardening",
+    "manifest test schema extension",
+    "safer subprocess invocation",
+    "timeout handling",
+    "cwd/env policy",
+    "new tests",
+    "updated example manifest",
+    "Codex minimal-apply instructions"
+  ]
+}

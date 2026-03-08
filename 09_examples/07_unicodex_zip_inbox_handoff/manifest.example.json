@@ -24,10 +24,20 @@
     {
       "name": "smoke-ui",
       "type": "command",
-      "command": "pnpm test:smoke",
+      "args": [
+        "python",
+        "-m",
+        "unittest",
+        "-q"
+      ],
+      "cwd": ".",
+      "timeout_sec": 300,
+      "env": {
+        "ZIP_SMOKE": "1"
+      },
       "required": true
     }
   ],
   "depends_on": [],
-  "notes": "Minimal example manifest"
+  "notes": "Updated example manifest showing preferred structured test execution fields"
 }
