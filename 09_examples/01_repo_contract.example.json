@@ -1,0 +1,22 @@
+{
+  "design_axioms": [
+    "artifact-first",
+    "contracts-before-prompts",
+    "determinism",
+    "numbered-visual-scan"
+  ],
+  "legacy_policy": "archive uncertain leftovers under 99_legacy_archive",
+  "repo_name": "hitech-ia",
+  "repo_purpose": "artifact forge and codex operations repository",
+  "root_folders": [
+    "01_contracts",
+    "02_modules",
+    "03_prompts",
+    "04_runs",
+    "05_reports",
+    "06_scripts",
+    "07_templates",
+    "08_schemas",
+    "09_examples"
+  ]
+}

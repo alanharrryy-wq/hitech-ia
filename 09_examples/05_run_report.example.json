@@ -1,0 +1,26 @@
+{
+  "commands_run": [
+    "python 06_scripts/01_validate_repo_layout.py"
+  ],
+  "files_archived": [
+    "99_legacy_archive/src/main.tsx"
+  ],
+  "files_created": [
+    "01_contracts/01_master_contract.md"
+  ],
+  "files_deleted": [],
+  "files_modified": [
+    "00_README.md"
+  ],
+  "next_steps": [
+    "add first project ZIP under 02_modules/01_hydration_sentinel/"
+  ],
+  "risks": [
+    "legacy archive may still contain files to delete later"
+  ],
+  "summary": "Bootstrapped hitech-ia from the contract pack and validated the layout.",
+  "validation_results": [
+    "layout_ok=true",
+    "schemas_examples_ok=true"
+  ]
+}

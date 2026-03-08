@@ -1,0 +1,38 @@
+{
+  "$id": "https://hitech.local/schemas/repo_contract.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "design_axioms": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "legacy_policy": {
+      "type": "string"
+    },
+    "repo_name": {
+      "type": "string"
+    },
+    "repo_purpose": {
+      "type": "string"
+    },
+    "root_folders": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "repo_name",
+    "repo_purpose",
+    "root_folders",
+    "design_axioms"
+  ],
+  "title": "HitechIaRepoContract",
+  "type": "object"
+}

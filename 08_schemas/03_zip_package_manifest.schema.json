@@ -1,0 +1,37 @@
+{
+  "$id": "https://hitech.local/schemas/zip_package_manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "compatibility_notes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "package_version": {
+      "type": "string"
+    },
+    "required_entries": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "structure": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "package_id",
+    "package_version",
+    "structure",
+    "required_entries"
+  ],
+  "title": "HitechIaZipPackageManifest",
+  "type": "object"
+}

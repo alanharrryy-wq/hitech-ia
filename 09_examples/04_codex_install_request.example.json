@@ -1,0 +1,14 @@
+{
+  "cleanup_policy": "archive uncertain leftovers",
+  "definition_of_done": [
+    "repo layout installed",
+    "schemas validate",
+    "legacy handling documented"
+  ],
+  "mode": "bootstrap",
+  "smoke_checks": [
+    "python 06_scripts/01_validate_repo_layout.py"
+  ],
+  "target_repo": "hitech-ia",
+  "zip_name": "hitech_ia_bootstrap_pack.zip"
+}

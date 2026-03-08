@@ -1,0 +1,45 @@
+{
+  "$id": "https://hitech.local/schemas/codex_install_request.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "cleanup_policy": {
+      "type": "string"
+    },
+    "definition_of_done": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "mode": {
+      "enum": [
+        "install",
+        "bootstrap",
+        "upgrade"
+      ],
+      "type": "string"
+    },
+    "smoke_checks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "target_repo": {
+      "type": "string"
+    },
+    "zip_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "target_repo",
+    "zip_name",
+    "mode",
+    "definition_of_done"
+  ],
+  "title": "HitechIaCodexInstallRequest",
+  "type": "object"
+}
