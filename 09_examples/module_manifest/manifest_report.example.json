@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "built_at": "2026-03-08T00:00:00Z",
+  "manifest_path": "/abs/path/manifest.json",
+  "source_inference_report": "/abs/path/inference_report.json",
+  "manifest": {
+    "schema_version": "1.0",
+    "project_slug": "ui_observability",
+    "package_slug": "ui_panel",
+    "sequence": 2,
+    "package_version": "0.1.0",
+    "kind": "module",
+    "wiring_mode": "copy",
+    "targets": [
+      {
+        "source": "src/panel.py",
+        "destination": "src/panel.py",
+        "mode": "overwrite",
+        "required": true
+      }
+    ],
+    "tests": [],
+    "depends_on": [],
+    "notes": ""
+  },
+  "metadata": {
+    "project_slug_from_inference": "ui_observability",
+    "package_slug_from_inference": "ui_panel",
+    "tentative_sequence_from_inference": 2
+  },
+  "warnings": [
+    "targets_seeded_from_inference"
+  ],
+  "validation_errors": [],
+  "is_valid": true,
+  "diff_preview": [
+    "--- before_manifest.json",
+    "+++ after_manifest.json"
+  ]
+}

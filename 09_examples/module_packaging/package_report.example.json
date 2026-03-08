@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "built_at": "2026-03-08T00:00:00Z",
+  "workspace_root": "/abs/path/workspace",
+  "manifest_path": "/abs/path/workspace/manifest.json",
+  "project_slug": "demo_project",
+  "package_slug": "demo_pkg",
+  "sequence": 1,
+  "zip_name": "zip1_demo_project_demo_pkg.zip",
+  "zip_size_bytes": 512,
+  "checksum": "abc123",
+  "inventory": [
+    "manifest.json",
+    "src/app.py"
+  ],
+  "delivery": {
+    "delivery_result": "moved",
+    "final_path": "/abs/repo/02_modules/_zip_inbox/demo_project/zip1_demo_project_demo_pkg.zip",
+    "checksum": "abc123"
+  },
+  "warnings": []
+}

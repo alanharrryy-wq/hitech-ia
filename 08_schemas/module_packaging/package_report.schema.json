@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Module Packaging Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "built_at",
+    "workspace_root",
+    "manifest_path",
+    "project_slug",
+    "package_slug",
+    "sequence",
+    "zip_name",
+    "zip_size_bytes",
+    "checksum",
+    "inventory",
+    "delivery",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "built_at": { "type": "string" },
+    "workspace_root": { "type": "string" },
+    "manifest_path": { "type": "string" },
+    "project_slug": { "type": "string" },
+    "package_slug": { "type": "string" },
+    "sequence": { "type": "integer", "minimum": 1 },
+    "zip_name": { "type": "string" },
+    "zip_size_bytes": { "type": "integer", "minimum": 0 },
+    "checksum": { "type": "string" },
+    "inventory": { "type": "array", "items": { "type": "string" } },
+    "delivery": { "type": "object" },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  }
+}

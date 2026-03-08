@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Module Generation Report",
+  "type": "object",
+  "required": ["schema_version", "built_at", "spec_path", "workspace_root", "normalized_spec", "created_files", "builder_report_path", "builder_package_zip_path", "warnings", "errors", "is_valid"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "built_at": { "type": "string" },
+    "spec_path": { "type": "string" },
+    "workspace_root": { "type": "string" },
+    "normalized_spec": { "type": "object" },
+    "created_files": { "type": "array", "items": { "type": "string" } },
+    "builder_report_path": { "type": ["string", "null"] },
+    "builder_package_zip_path": { "type": ["string", "null"] },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "errors": { "type": "array", "items": { "type": "string" } },
+    "is_valid": { "type": "boolean" }
+  }
+}

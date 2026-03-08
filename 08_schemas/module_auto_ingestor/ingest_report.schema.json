@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Module Auto Ingestor Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "built_at",
+    "repo_root",
+    "mode",
+    "watch",
+    "interval_sec",
+    "iterations",
+    "queue_snapshots",
+    "runs",
+    "warnings",
+    "errors",
+    "is_valid"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "built_at": { "type": "string" },
+    "repo_root": { "type": "string" },
+    "mode": { "type": "string" },
+    "watch": { "type": "boolean" },
+    "interval_sec": { "type": "integer", "minimum": 1 },
+    "iterations": { "type": "integer", "minimum": 1 },
+    "queue_snapshots": { "type": "array" },
+    "runs": { "type": "array" },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "errors": { "type": "array", "items": { "type": "string" } },
+    "is_valid": { "type": "boolean" }
+  }
+}

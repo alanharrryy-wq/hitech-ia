@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "project_slug": "ui_observability",
+  "package_slug": "panel_widget",
+  "sequence": 2,
+  "package_version": "0.1.0",
+  "kind": "module",
+  "wiring_mode": "copy",
+  "targets": [
+    {
+      "source": "src/panel.py",
+      "destination": "src/panel.py",
+      "mode": "overwrite",
+      "required": true
+    }
+  ],
+  "tests": [
+    {
+      "name": "smoke",
+      "type": "command",
+      "args": [
+        "python",
+        "-m",
+        "unittest"
+      ],
+      "required": true,
+      "timeout_sec": 120,
+      "env": {}
+    }
+  ],
+  "depends_on": [],
+  "notes": ""
+}

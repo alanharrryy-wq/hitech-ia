@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "inferred_at": "2026-03-08T00:00:00Z",
+  "scan_report_path": "/abs/path/scan_report.json",
+  "probable_project_slug": "ui_observability",
+  "project_resolution": {
+    "probable_project_slug": "ui_observability",
+    "resolution_mode": "existing_project",
+    "confidence": "high",
+    "tentative_sequence": 3,
+    "candidates": [
+      {
+        "project_slug": "ui_observability",
+        "score": 1.0
+      }
+    ],
+    "warnings": []
+  },
+  "probable_package_slug": "ui_observability_panel",
+  "target_suggestions": [
+    {
+      "source": "src/panel.py",
+      "destination": "src/panel.py",
+      "required": true,
+      "reason": "deterministic_path_mapping"
+    },
+    {
+      "source": "tests/test_panel.py",
+      "destination": "tests/test_panel.py",
+      "required": true,
+      "reason": "deterministic_path_mapping"
+    },
+    {
+      "source": "docs/README.md",
+      "destination": "docs/README.md",
+      "required": true,
+      "reason": "deterministic_path_mapping"
+    }
+  ],
+  "dependency_hints": [
+    {
+      "kind": "runtime",
+      "name": "python_dependencies",
+      "confidence": "high"
+    }
+  ],
+  "signals_snapshot": {
+    "probable_primary_language": "python",
+    "has_tests": true,
+    "has_docs": true,
+    "has_src": true,
+    "has_manifest_candidate": false
+  },
+  "warnings": []
+}

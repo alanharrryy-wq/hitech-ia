@@ -1,0 +1,21 @@
+{
+  "project_slug": "UI-Observability",
+  "package_slug": "Panel Widget",
+  "sequence": "2",
+  "package_version": "0.1.0",
+  "kind": "module",
+  "wiring_mode": "copy",
+  "targets": [
+    {
+      "source": "src/panel.py",
+      "destination": "src/panel.py"
+    }
+  ],
+  "tests": [
+    {
+      "name": "smoke",
+      "type": "command",
+      "command": "python -m unittest"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "built_at": "2026-03-08T00:00:00Z",
+  "spec_path": "/abs/path/module_spec.json",
+  "workspace_root": "/tmp/generated_workspace",
+  "normalized_spec": {
+    "project_slug": "demo_project",
+    "package_slug": "demo_pkg",
+    "module_name": "Demo Package",
+    "language": "python",
+    "summary": "A minimal generated module",
+    "features": [
+      "prints module info"
+    ],
+    "exports": [
+      "module_info"
+    ],
+    "tests": [
+      "basic smoke"
+    ],
+    "docs": [
+      "Generated from minimal spec"
+    ],
+    "project_hint": null,
+    "entrypoint_name": "demo_pkg"
+  },
+  "created_files": [
+    "src/",
+    "tests/",
+    "docs/",
+    "config/",
+    "src/demo_pkg.py",
+    "docs/README.md",
+    "tests/test_demo_pkg.py",
+    "manifest.seed.json"
+  ],
+  "builder_report_path": "/tmp/builder_report.json",
+  "builder_package_zip_path": "/repo/02_modules/_zip_inbox/demo_project/zip1_demo_project_demo_pkg.zip",
+  "warnings": [],
+  "errors": [],
+  "is_valid": true
+}

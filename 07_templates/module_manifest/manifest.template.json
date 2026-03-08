@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "project_slug": "sample_project",
+  "package_slug": "sample_package",
+  "sequence": 1,
+  "package_version": "0.1.0",
+  "kind": "module",
+  "wiring_mode": "copy",
+  "targets": [],
+  "tests": [],
+  "depends_on": [],
+  "notes": ""
+}

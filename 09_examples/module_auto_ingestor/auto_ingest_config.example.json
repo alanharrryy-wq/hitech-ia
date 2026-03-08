@@ -1,0 +1,6 @@
+{
+  "mode": "dry_run",
+  "watch": false,
+  "interval_sec": 15,
+  "max_loops": 1
+}

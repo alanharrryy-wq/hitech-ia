@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Module Builder Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "built_at",
+    "source_root",
+    "workspace_root",
+    "project_slug",
+    "package_slug",
+    "package_report_path",
+    "package_zip_path",
+    "stage_outputs",
+    "warnings",
+    "errors",
+    "is_valid"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "built_at": { "type": "string" },
+    "source_root": { "type": "string" },
+    "workspace_root": { "type": "string" },
+    "project_slug": { "type": ["string", "null"] },
+    "package_slug": { "type": ["string", "null"] },
+    "package_report_path": { "type": ["string", "null"] },
+    "package_zip_path": { "type": ["string", "null"] },
+    "stage_outputs": { "type": "object" },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "errors": { "type": "array", "items": { "type": "string" } },
+    "is_valid": { "type": "boolean" }
+  }
+}

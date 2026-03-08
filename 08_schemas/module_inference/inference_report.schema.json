@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Structure Inference Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "inferred_at",
+    "scan_report_path",
+    "probable_project_slug",
+    "project_resolution",
+    "probable_package_slug",
+    "target_suggestions",
+    "dependency_hints",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "inferred_at": { "type": "string" },
+    "scan_report_path": { "type": "string" },
+    "probable_project_slug": { "type": "string" },
+    "project_resolution": { "type": "object" },
+    "probable_package_slug": { "type": "string" },
+    "target_suggestions": { "type": "array" },
+    "dependency_hints": { "type": "array" },
+    "signals_snapshot": { "type": "object" },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  }
+}

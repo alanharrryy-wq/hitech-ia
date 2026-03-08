@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Module Generator Spec",
+  "type": "object",
+  "required": ["project_slug", "package_slug", "module_name", "language", "summary"],
+  "properties": {
+    "project_slug": { "type": "string" },
+    "package_slug": { "type": "string" },
+    "module_name": { "type": "string" },
+    "language": { "type": "string", "enum": ["python", "javascript", "typescript"] },
+    "summary": { "type": "string" },
+    "features": { "type": "array", "items": { "type": "string" } },
+    "exports": { "type": "array", "items": { "type": "string" } },
+    "tests": { "type": "array", "items": { "type": "string" } },
+    "docs": { "type": "array", "items": { "type": "string" } },
+    "project_hint": { "type": "string" },
+    "entrypoint_name": { "type": "string" }
+  }
+}

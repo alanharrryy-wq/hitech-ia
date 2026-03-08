@@ -1,0 +1,2 @@
+Read module_spec.json, generate a canonical source workspace, then invoke the builder.
+Do not install the module. Only generate and package into _zip_inbox.

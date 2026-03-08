@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Module Scanner Report",
+  "type": "object",
+  "required": ["schema_version", "scanned_at", "input_path", "input_type", "inventory", "summary", "signals", "warnings"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "scanned_at": { "type": "string" },
+    "input_path": { "type": "string" },
+    "input_type": { "type": "string", "enum": ["zip", "directory"] },
+    "inventory": { "type": "array" },
+    "summary": { "type": "object" },
+    "signals": { "type": "object" },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  }
+}

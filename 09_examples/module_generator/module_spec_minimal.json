@@ -1,0 +1,19 @@
+{
+  "project_slug": "demo_project",
+  "package_slug": "demo_pkg",
+  "module_name": "Demo Package",
+  "language": "python",
+  "summary": "A minimal generated module",
+  "features": [
+    "prints module info"
+  ],
+  "exports": [
+    "module_info"
+  ],
+  "tests": [
+    "basic smoke"
+  ],
+  "docs": [
+    "Generated from minimal spec"
+  ]
+}

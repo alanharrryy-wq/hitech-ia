@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "built_at": "2026-03-08T00:00:00Z",
+  "source_root": "/abs/source",
+  "workspace_root": "/tmp/workspace",
+  "project_slug": "demo_project",
+  "package_slug": "demo_pkg",
+  "package_report_path": "/tmp/package_report.json",
+  "package_zip_path": "/repo/02_modules/_zip_inbox/demo_project/zip1_demo_project_demo_pkg.zip",
+  "stage_outputs": {
+    "workspace": {
+      "copied_files": [
+        "assets/main.py"
+      ],
+      "collision_paths": []
+    },
+    "scan": {
+      "returncode": 0
+    },
+    "inference": {
+      "returncode": 0
+    },
+    "manifest": {
+      "returncode": 0
+    },
+    "packaging": {
+      "returncode": 0
+    }
+  },
+  "warnings": [],
+  "errors": [],
+  "is_valid": true
+}

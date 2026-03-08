@@ -1,0 +1,2 @@
+Generate a deterministic HITECH-IA module from structured spec JSON.
+Do not improvise architecture. Use templates, docs seeds, and builder handoff only.

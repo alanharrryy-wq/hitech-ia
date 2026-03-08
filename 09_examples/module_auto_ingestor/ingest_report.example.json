@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "built_at": "2026-03-08T00:00:00Z",
+  "repo_root": "/abs/repo",
+  "mode": "dry_run",
+  "watch": false,
+  "interval_sec": 15,
+  "iterations": 1,
+  "queue_snapshots": [
+    [
+      {
+        "project_slug": "factory_test",
+        "project_path": "/abs/repo/02_modules/_zip_inbox/factory_test",
+        "pending_zip_count": 1
+      }
+    ]
+  ],
+  "runs": [
+    {
+      "project_slug": "factory_test",
+      "mode": "dry_run",
+      "returncode": 0,
+      "stdout": "STATUS: PASS",
+      "stderr": "",
+      "status": "success"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "is_valid": true
+}

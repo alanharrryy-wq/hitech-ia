@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manifest Engine Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "built_at",
+    "manifest_path",
+    "source_inference_report",
+    "manifest",
+    "metadata",
+    "warnings",
+    "validation_errors",
+    "is_valid",
+    "diff_preview"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "built_at": { "type": "string" },
+    "manifest_path": { "type": "string" },
+    "source_inference_report": { "type": "string" },
+    "manifest": { "type": "object" },
+    "metadata": { "type": "object" },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "validation_errors": { "type": "array", "items": { "type": "string" } },
+    "is_valid": { "type": "boolean" },
+    "diff_preview": { "type": "array", "items": { "type": "string" } }
+  }
+}

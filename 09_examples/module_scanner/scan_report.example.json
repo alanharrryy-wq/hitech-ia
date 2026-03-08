@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "scanned_at": "2026-03-08T00:00:00Z",
+  "input_path": "/abs/path/raw_module.zip",
+  "input_type": "zip",
+  "inventory": [
+    {
+      "relative_path": "docs/README.md",
+      "extension": ".md",
+      "size_bytes": 42,
+      "kind": "archive_member",
+      "top_level_dir": "docs",
+      "language_guess": "markdown",
+      "is_noise": false,
+      "is_suspicious": false,
+      "suspicious_reason": null,
+      "is_textish": true
+    },
+    {
+      "relative_path": "src/app.py",
+      "extension": ".py",
+      "size_bytes": 111,
+      "kind": "archive_member",
+      "top_level_dir": "src",
+      "language_guess": "python",
+      "is_noise": false,
+      "is_suspicious": false,
+      "suspicious_reason": null,
+      "is_textish": true
+    },
+    {
+      "relative_path": "__pycache__/tmp.pyc",
+      "extension": ".pyc",
+      "size_bytes": 17,
+      "kind": "archive_member",
+      "top_level_dir": "__pycache__",
+      "language_guess": null,
+      "is_noise": true,
+      "is_suspicious": false,
+      "suspicious_reason": null,
+      "is_textish": false
+    }
+  ],
+  "summary": {
+    "file_count": 3,
+    "noise_count": 1,
+    "suspicious_count": 0,
+    "textish_count": 2,
+    "binaryish_count": 1
+  },
+  "signals": {
+    "language_counts": {
+      "markdown": 1,
+      "python": 1
+    },
+    "extension_counts": {
+      ".md": 1,
+      ".py": 1,
+      ".pyc": 1
+    },
+    "top_level_dirs": {
+      "__pycache__": 1,
+      "docs": 1,
+      "src": 1
+    },
+    "probable_primary_language": "markdown",
+    "has_tests": false,
+    "has_docs": true,
+    "has_src": true,
+    "has_manifest_candidate": false
+  },
+  "warnings": []
+}
