@@ -1,0 +1,67 @@
+{
+  "$id": "https://hitech.local/schemas/run_report.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "commands_run": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "files_archived": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "files_created": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "files_deleted": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "files_modified": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "next_steps": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "risks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "validation_results": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "summary",
+    "files_created",
+    "files_modified",
+    "commands_run",
+    "validation_results"
+  ],
+  "title": "HitechIaRunReport",
+  "type": "object"
+}

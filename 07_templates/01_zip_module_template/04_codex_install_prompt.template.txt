@@ -1,0 +1,11 @@
+GOAL
+Install the attached module ZIP into the target repo with minimal, deterministic changes.
+
+CONTEXT
+This ZIP follows the HITECH ZIP Module Standard.
+
+CONSTRAINTS
+1. Read the ZIP docs first.
+2. Install `package/01_files/` into the repo.
+3. Run smoke validation first.
+4. Write an explicit final report.

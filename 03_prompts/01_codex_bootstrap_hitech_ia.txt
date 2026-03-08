@@ -1,0 +1,142 @@
+GOAL
+Transform the current repository into `hitech-ia`, a deterministic artifact forge and Codex operations repository, by installing the attached contract pack exactly, wiring the numbered folder layout, cleaning or archiving obsolete frontend leftovers, validating the resulting structure, and leaving the repo ready for future ZIP modules and prompt packs.
+
+CONTEXT
+You are working in the repository that will become `hitech-ia`.
+The attached ZIP contract pack is the primary installation blueprint.
+This repo may currently contain an older frontend/Vite-style codebase that is no longer the desired purpose.
+The desired final repo is documentation-first and artifact-first, not product-runtime-first.
+Numbered folders and files are part of the user-facing operator UX.
+
+CONSTRAINTS
+1. Read every file in the attached contract pack before making repo changes.
+2. Install the contents of `package/01_files/` into the target repo root.
+3. Preserve numbered folder and file naming exactly unless a platform convention requires an exception.
+4. Prefer minimal deletions. If old files are uncertain, move them to `99_legacy_archive/` and document them.
+5. Keep the repo deterministic and easy to scan visually.
+6. Do not invent extra root folders.
+7. Keep temporary unpacking outside the repo or under an ignored temp folder.
+8. Ensure schemas and examples validate.
+9. Prefer smoke validation first.
+10. Do not ask the user follow-up questions. Make reasonable assumptions and proceed.
+11. Final repo must be clean, coherent, and ready to store ZIP artifacts for multiple projects.
+12. Do not leave the attached ZIP as a runtime dependency inside the repo.
+13. If local repo naming still says `hitech-ia`, update docs to the new purpose `hitech-ia`.
+14. Final report must be explicit.
+
+ASSUMPTIONS
+1. The attached ZIP is fully accessible.
+2. The target repo is allowed to be repurposed.
+3. Python 3 is available for validation scripts.
+4. Minor legacy cleanup is acceptable.
+
+TASKS (10)
+1. Objective: Inspect the attached contract pack and current repo state.
+   Steps:
+   - Read the package contracts, schemas, examples, and prompt files.
+   - Inspect the current repo root and identify old frontend-specific leftovers.
+   - Build a migration plan grounded in the pack.
+   Acceptance criteria:
+   - You can state the intended numbered root layout.
+   - You know which legacy files can be removed, archived, or kept.
+
+2. Objective: Stage the package safely.
+   Steps:
+   - Unpack the ZIP into a temporary ignored folder or external staging location.
+   - Preserve package structure.
+   Acceptance criteria:
+   - The pack is available for file copy without polluting committed roots.
+
+3. Objective: Install the numbered repo layout and files.
+   Steps:
+   - Copy all files from `package/01_files/` into repo root.
+   - Ensure the canonical root folders exist.
+   Acceptance criteria:
+   - Root layout matches the contract pack.
+   - Core docs, prompts, schemas, examples, and scripts are present.
+
+4. Objective: Handle legacy repo leftovers.
+   Steps:
+   - Remove obviously obsolete frontend scaffold files.
+   - Move uncertain leftovers into `99_legacy_archive/` with an archive note.
+   Acceptance criteria:
+   - No stale frontend scaffold remains unexplained.
+   - Archive decisions are documented.
+
+5. Objective: Wire prompts, templates, and module shelves.
+   Steps:
+   - Confirm prompt files reference the repo purpose correctly.
+   - Ensure module directories and template directories are ready for future ZIPs.
+   Acceptance criteria:
+   - Prompt and template folders are coherent and usable.
+
+6. Objective: Validate schemas and examples.
+   Steps:
+   - Run the provided validation script.
+   - Validate example JSON files against the JSON Schemas.
+   Acceptance criteria:
+   - All included examples pass schema validation.
+   - Validation output is deterministic and readable.
+
+7. Objective: Verify naming and numbering integrity.
+   Steps:
+   - Confirm numbered folders and files sort correctly.
+   - Fix any accidental naming drift introduced during installation.
+   Acceptance criteria:
+   - Visual scan order is stable and matches the contract.
+
+8. Objective: Ensure repo hygiene.
+   Steps:
+   - Confirm `.gitignore` covers temp unpack/staging locations.
+   - Ensure no unpack leftovers or caches are committed.
+   Acceptance criteria:
+   - Repo remains clean and artifact-purpose-focused.
+
+9. Objective: Produce a concise operator report.
+   Steps:
+   - Summarize what was installed, archived, or removed.
+   - Record validation results.
+   Acceptance criteria:
+   - A maintainer can understand the migration from the final report alone.
+
+10. Objective: Final readiness check.
+    Steps:
+    - Re-scan root layout.
+    - Confirm the repo is ready to receive future ZIP modules for multiple projects.
+    Acceptance criteria:
+    - Repo is coherent, minimal, deterministic, and installation-ready.
+
+DELIVERABLES
+- Bootstrapped `hitech-ia` repo layout
+- Installed core contracts
+- Installed schemas and examples
+- Installed prompts and templates
+- Validation script output
+- Archive note for legacy leftovers if needed
+- Final migration report
+
+VALIDATION
+1. Run `python 06_scripts/01_validate_repo_layout.py`.
+2. Confirm success output for layout and schema validation.
+3. Confirm root folders exist: `01_contracts`, `02_modules`, `03_prompts`, `04_runs`, `05_reports`, `06_scripts`, `07_templates`, `08_schemas`, `09_examples`.
+4. Confirm no temporary unpack artifacts remain committed.
+5. Confirm legacy handling is documented.
+
+STOP CONDITIONS
+1. The attached ZIP cannot be read.
+2. The target repo is read-only and cannot be modified.
+3. Required core files from `package/01_files/` cannot be installed.
+4. Validation fails in a way that indicates contract-pack corruption.
+
+FINAL REPORT FORMAT
+1. SUMMARY
+2. FILES CREATED
+3. FILES MODIFIED
+4. FILES DELETED
+5. FILES ARCHIVED
+6. COMMANDS RUN
+7. VALIDATION RESULTS
+8. DESIGN NOTES
+9. RISKS
+10. NEXT STEPS
+

@@ -1,0 +1,74 @@
+{
+  "$id": "https://hitech.local/schemas/module_manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "deletions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "files": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "sha256": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "target"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "mode": {
+      "enum": [
+        "additive-first",
+        "mixed",
+        "cleanup"
+      ],
+      "type": "string"
+    },
+    "module_id": {
+      "type": "string"
+    },
+    "module_name": {
+      "type": "string"
+    },
+    "module_version": {
+      "type": "string"
+    },
+    "notes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "target_repo": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "module_id",
+    "module_name",
+    "module_version",
+    "target_repo",
+    "files"
+  ],
+  "title": "HitechIaModuleManifest",
+  "type": "object"
+}

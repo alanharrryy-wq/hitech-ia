@@ -1,0 +1,12 @@
+{
+  "deletions": [],
+  "files": [],
+  "mode": "additive-first",
+  "module_id": "module_slug",
+  "module_name": "Human Readable Module Name",
+  "module_version": "1.0.0",
+  "notes": [],
+  "package_layout": "package/01_files + manifest + wire plan + acceptance + prompt",
+  "schema_version": "1.0.0",
+  "target_repo": "hitech-os"
+}

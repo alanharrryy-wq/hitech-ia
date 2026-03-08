@@ -1,0 +1,16 @@
+# 02 Codex Usage Prompt Template
+
+Use this template when giving Codex a module ZIP from this repo.
+
+1. State the target repo.
+2. State the attached ZIP path or name.
+3. State whether the install is additive-only or includes cleanup.
+4. Require reading the ZIP docs first.
+5. Require smoke validation first.
+6. Require an explicit final report.
+
+Suggested framing:
+- Treat the attached ZIP as the authoritative implementation bundle.
+- Unpack, wire, validate, and report.
+- Resolve only light path/import conflicts.
+- Do not redesign the architecture unless the pack is internally inconsistent.

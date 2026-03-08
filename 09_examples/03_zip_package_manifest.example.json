@@ -1,0 +1,16 @@
+{
+  "compatibility_notes": [
+    "self-contained",
+    "offline-readable"
+  ],
+  "package_id": "hitech_ia_bootstrap_pack",
+  "package_version": "1.0.0",
+  "required_entries": [
+    "package/01_files/",
+    "package/02_manifest/MANIFEST.json",
+    "package/03_wire_plan/WIRE_PLAN.md",
+    "package/04_acceptance/ACCEPTANCE.md",
+    "package/05_codex_prompt/CODEX_INSTALL_PROMPT.txt"
+  ],
+  "structure": "package/01_files + manifest + wire plan + acceptance + prompt"
+}

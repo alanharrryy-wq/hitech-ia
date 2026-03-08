@@ -1,8 +1,21 @@
+# temp and local staging
+90_tmp/
+91_unpack/
+92_build/
+93_cache/
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# node
 node_modules/
-dist/
-.DS_Store
+
+# secrets and local env
 .env
 .env.*
+<<<<<<< HEAD
 npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
@@ -42,3 +55,9 @@ scripts/hitech-templates/.engine-*.applied.flag
 **/*.manualbak_*
 **/*.precut_*
 .hitech-patcher/
+=======
+
+# os junk
+.DS_Store
+Thumbs.db
+>>>>>>> fix/desktop-bridge
