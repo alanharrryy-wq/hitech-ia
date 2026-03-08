@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Internal Registry",
+  "type": "object",
+  "required": [
+    "registry_schema_version",
+    "generated_at_utc",
+    "inbox_root",
+    "projects"
+  ],
+  "properties": {
+    "registry_schema_version": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "inbox_root": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "project_slug",
+          "project_state",
+          "validation_status",
+          "install_plan_eligible",
+          "sequence_status",
+          "packages"
+        ],
+        "properties": {
+          "project_slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "project_state": {
+            "type": "string"
+          },
+          "validation_status": {
+            "type": "string",
+            "enum": ["pass", "fail"]
+          },
+          "install_plan_eligible": {
+            "type": "boolean"
+          },
+          "sequence_status": {
+            "type": "object",
+            "required": [
+              "is_contiguous",
+              "present_sequences",
+              "missing_sequences",
+              "duplicate_sequences"
+            ],
+            "properties": {
+              "is_contiguous": {"type": "boolean"},
+              "present_sequences": {"type": "array", "items": {"type": "integer"}},
+              "missing_sequences": {"type": "array", "items": {"type": "integer"}},
+              "duplicate_sequences": {"type": "array", "items": {"type": "integer"}}
+            }
+          },
+          "findings": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "package_counts": {
+            "type": "object"
+          },
+          "packages": {
+            "type": "array",
+            "items": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "title": "Registry Entry",
+              "type": "object",
+              "required": [
+                "sequence",
+                "project_slug",
+                "package_slug",
+                "filename",
+                "source_zip_file",
+                "sha256",
+                "status",
+                "validation_status",
+                "install_plan_eligible",
+                "archive_state"
+              ],
+              "properties": {
+                "sequence": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "project_slug": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                },
+                "package_slug": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                },
+                "filename": {
+                  "type": "string",
+                  "pattern": "^zip[1-9][0-9]*_[a-z0-9]+(?:_[a-z0-9]+)*_[a-z0-9]+(?:_[a-z0-9]+)*\\.zip$"
+                },
+                "source_zip_file": {
+                  "type": "string",
+                  "pattern": "^zip[1-9][0-9]*_[a-z0-9]+(?:_[a-z0-9]+)*_[a-z0-9]+(?:_[a-z0-9]+)*\\.zip$"
+                },
+                "relative_path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-fA-F0-9]{64}$"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "validated",
+                    "planned",
+                    "applied",
+                    "processed",
+                    "failed",
+                    "quarantined"
+                  ]
+                },
+                "validation_status": {
+                  "type": "string",
+                  "enum": ["pass", "fail"]
+                },
+                "install_plan_eligible": {
+                  "type": "boolean"
+                },
+                "archive_state": {
+                  "type": "string",
+                  "enum": ["inbox", "processed", "failed", "quarantined"]
+                },
+                "size_bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "findings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "archive_path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "last_seen_utc": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "invalid_zip_files": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

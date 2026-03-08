@@ -1,0 +1,1 @@
+{"manifest_version":"1.0.0","project_slug":"sample_project","targets":{"contract_repo":{},"runtime_repo":{}},"routing_rules":[],"quality_gates":{"preflight":[],"post_apply":[]}}

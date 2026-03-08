@@ -1,0 +1,61 @@
+{
+  "manifest_version": "1.0.0",
+  "project_slug": "<project_slug>",
+  "targets": {
+    "contract_repo": {
+      "contracts_path": "01_contracts/<project_slug>",
+      "schemas_path": "08_schemas/<project_slug>",
+      "examples_path": "09_examples/<project_slug>",
+      "reports_path": "05_reports/<project_slug>"
+    },
+    "runtime_repo": {
+      "tools_path": "tools/<project-kebab>",
+      "tests_path": "tests/<project-kebab>"
+    }
+  },
+  "routing_rules": [
+    {
+      "selector": "contracts/**",
+      "destination": "contract_repo.contracts_path"
+    },
+    {
+      "selector": "schemas/**",
+      "destination": "contract_repo.schemas_path"
+    },
+    {
+      "selector": "examples/**",
+      "destination": "contract_repo.examples_path"
+    },
+    {
+      "selector": "runtime/**",
+      "destination": "runtime_repo.tools_path"
+    },
+    {
+      "selector": "tests/**",
+      "destination": "runtime_repo.tests_path"
+    }
+  ],
+  "quality_gates": {
+    "preflight": [
+      "filename_valid",
+      "sequence_valid",
+      "no_duplicate_sequences",
+      "manifest_present"
+    ],
+    "post_apply": [
+      "required_targets_exist",
+      "tests_passed",
+      "report_written",
+      "ledger_written"
+    ]
+  },
+  "archive_policy": {
+    "processed_folder": "_processed",
+    "failed_folder": "_failed",
+    "keep_original_filename": true
+  },
+  "lock_policy": {
+    "lock_filename": ".install.lock",
+    "single_active_apply": true
+  }
+}

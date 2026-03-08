@@ -1,0 +1,3 @@
+# ZIP inbox temp folders
+02_modules/_zip_inbox/**/_staging/
+02_modules/_zip_inbox/**/.install.lock

@@ -13,6 +13,8 @@ Laws, contracts, acceptance rules, decision logs, migration notes.
 
 ### `02_modules/`
 Installable ZIP artifacts grouped by domain. This is the operational payload shelf.
+`02_modules/_zip_inbox/` is the canonical landing zone for future ZIP deliveries using:
+`zip<sequence>_<project_slug>_<package_slug>.zip`.
 
 ### `03_prompts/`
 Codex installer prompts, worker prompts, and prompt references.

@@ -1,0 +1,35 @@
+You are operating in a neutral ZIP inbox repository system.
+
+You have two attached ZIP packs:
+1. a reference documentation pack
+2. a runtime automation pack
+
+Your objectives:
+- unpack both packs outside the repo root or under a temporary ignored staging folder,
+- install the neutral docs into their intended neutral reference locations,
+- install the runtime scripts into the repository automation area,
+- scan `02_modules/_zip_inbox/`,
+- validate naming and sequence continuity,
+- build a full registry snapshot,
+- generate an install plan for the selected project slug,
+- execute deterministic unpack and routing actions,
+- write outputs to `04_runs/zip_inbox/` and `05_reports/zip_inbox/`,
+- archive processed ZIPs,
+- rebuild the registry after processing.
+
+Rules:
+- preserve numbered ordering,
+- do not reference any current project by name unless it appears in ZIP filenames,
+- do not invent non-neutral naming conventions,
+- fail loudly on naming violations,
+- keep all outputs deterministic and machine-readable.
+
+Required naming format:
+- `zip<sequence>_<project_slug>_<package_slug>.zip`
+
+Required outputs:
+- registry snapshot JSON
+- install plan JSON
+- validation report JSON
+- human-readable run summary markdown
+- archive manifest JSON

@@ -1,0 +1,28 @@
+{
+  "registry_schema_version": "1.1.0",
+  "generated_at_utc": "<timestamp>",
+  "inbox_root": "02_modules/_zip_inbox",
+  "projects": [
+    {
+      "project_slug": "<project_slug>",
+      "project_state": "idle",
+      "validation_status": "pass",
+      "install_plan_eligible": false,
+      "sequence_status": {
+        "is_contiguous": false,
+        "present_sequences": [],
+        "missing_sequences": [],
+        "duplicate_sequences": []
+      },
+      "findings": [],
+      "package_counts": {
+        "inbox": 0,
+        "processed": 0,
+        "failed": 0,
+        "quarantined": 0
+      },
+      "packages": []
+    }
+  ],
+  "invalid_zip_files": []
+}

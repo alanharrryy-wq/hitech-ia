@@ -1,0 +1,80 @@
+{
+  "registry_schema_version": "1.1.0",
+  "generated_at_utc": "2026-03-08T00:00:00Z",
+  "inbox_root": "02_modules/_zip_inbox",
+  "projects": [
+    {
+      "project_slug": "ui_observability",
+      "project_state": "ready",
+      "validation_status": "pass",
+      "install_plan_eligible": true,
+      "sequence_status": {
+        "is_contiguous": true,
+        "present_sequences": [1, 2],
+        "missing_sequences": [],
+        "duplicate_sequences": []
+      },
+      "findings": [],
+      "package_counts": {
+        "inbox": 2,
+        "processed": 1,
+        "failed": 0,
+        "quarantined": 0
+      },
+      "packages": [
+        {
+          "sequence": 1,
+          "project_slug": "ui_observability",
+          "package_slug": "core",
+          "filename": "zip1_ui_observability_core.zip",
+          "source_zip_file": "zip1_ui_observability_core.zip",
+          "relative_path": "ui_observability/zip1_ui_observability_core.zip",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "status": "validated",
+          "validation_status": "pass",
+          "install_plan_eligible": true,
+          "archive_state": "inbox",
+          "archive_path": null,
+          "size_bytes": 50231,
+          "findings": [],
+          "last_seen_utc": "2026-03-08T00:00:00Z"
+        },
+        {
+          "sequence": 2,
+          "project_slug": "ui_observability",
+          "package_slug": "rules_reporting",
+          "filename": "zip2_ui_observability_rules_reporting.zip",
+          "source_zip_file": "zip2_ui_observability_rules_reporting.zip",
+          "relative_path": "ui_observability/zip2_ui_observability_rules_reporting.zip",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "status": "validated",
+          "validation_status": "pass",
+          "install_plan_eligible": true,
+          "archive_state": "inbox",
+          "archive_path": null,
+          "size_bytes": 28444,
+          "findings": [],
+          "last_seen_utc": "2026-03-08T00:00:00Z"
+        },
+        {
+          "sequence": 1,
+          "project_slug": "ui_observability",
+          "package_slug": "bootstrap",
+          "filename": "zip1_ui_observability_bootstrap.zip",
+          "source_zip_file": "zip1_ui_observability_bootstrap.zip",
+          "relative_path": "ui_observability/_processed/20260308T000000Z/zip1_ui_observability_bootstrap.zip",
+          "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "status": "processed",
+          "validation_status": "pass",
+          "install_plan_eligible": false,
+          "archive_state": "processed",
+          "archive_path": "ui_observability/_processed/20260308T000000Z/zip1_ui_observability_bootstrap.zip",
+          "size_bytes": 12000,
+          "findings": [],
+          "last_seen_utc": "2026-03-08T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "invalid_zip_files": []
+}

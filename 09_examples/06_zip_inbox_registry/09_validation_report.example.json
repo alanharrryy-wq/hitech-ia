@@ -1,0 +1,52 @@
+{
+  "validation_schema_version": "1.1.0",
+  "generated_at": "2026-03-08T00:00:00Z",
+  "generated_at_utc": "2026-03-08T00:00:00Z",
+  "inbox_root": "02_modules/_zip_inbox",
+  "valid": true,
+  "summary": {
+    "project_count": 1,
+    "zip_count": 2,
+    "error_count": 0,
+    "warning_count": 0
+  },
+  "errors": [],
+  "warnings": [],
+  "projects_detected": [
+    "ui_observability"
+  ],
+  "projects": [
+    {
+      "project_slug": "ui_observability",
+      "folder": "ui_observability",
+      "manifest_present": true,
+      "zip_count": 2,
+      "sequence_status": {
+        "is_contiguous": true,
+        "present_sequences": [1, 2],
+        "missing_sequences": [],
+        "duplicate_sequences": []
+      },
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "packages": [
+        {
+          "filename": "zip1_ui_observability_core.zip",
+          "sequence": 1,
+          "project_slug": "ui_observability",
+          "package_slug": "core",
+          "relative_path": "ui_observability/zip1_ui_observability_core.zip"
+        },
+        {
+          "filename": "zip2_ui_observability_rules_reporting.zip",
+          "sequence": 2,
+          "project_slug": "ui_observability",
+          "package_slug": "rules_reporting",
+          "relative_path": "ui_observability/zip2_ui_observability_rules_reporting.zip"
+        }
+      ]
+    }
+  ],
+  "invalid_zip_files": []
+}

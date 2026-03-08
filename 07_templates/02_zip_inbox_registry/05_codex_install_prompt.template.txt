@@ -1,0 +1,17 @@
+You are installing one neutral ZIP-driven project from the inbox.
+
+Rules:
+1. Read only from `<contract-repo>/02_modules/_zip_inbox/<project_slug>/`
+2. Sort ZIPs by the numeric prefix in `zip<sequence>_`
+3. Validate names, duplicates, gaps and project-folder identity
+4. Refresh the internal registry before generating a plan
+5. Read `project.manifest.json` if present
+6. Generate a dry-run install plan first
+7. Route contract assets to the contract repo
+8. Route runtime assets to the runtime repo
+9. Write an install report and a ledger
+10. Move successfully consumed ZIPs to `_processed/`
+11. Move failed or foreign ZIPs to `_failed/` or quarantine
+12. Never mix packages from different project folders
+13. Never apply without staging
+14. Never skip quality gates

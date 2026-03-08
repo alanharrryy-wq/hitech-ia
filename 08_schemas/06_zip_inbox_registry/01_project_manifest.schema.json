@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project Manifest",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "project_slug",
+    "targets",
+    "routing_rules",
+    "quality_gates"
+  ],
+  "properties": {
+    "manifest_version": {
+      "type": "string"
+    },
+    "project_slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+    },
+    "targets": {
+      "type": "object",
+      "required": [
+        "contract_repo",
+        "runtime_repo"
+      ],
+      "properties": {
+        "contract_repo": {
+          "type": "object"
+        },
+        "runtime_repo": {
+          "type": "object"
+        }
+      }
+    },
+    "routing_rules": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "quality_gates": {
+      "type": "object",
+      "required": [
+        "preflight",
+        "post_apply"
+      ],
+      "properties": {
+        "preflight": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "post_apply": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "archive_policy": {
+      "type": "object"
+    },
+    "lock_policy": {
+      "type": "object"
+    }
+  }
+}

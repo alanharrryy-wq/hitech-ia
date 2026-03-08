@@ -1,0 +1,81 @@
+{
+  "registry_schema_version": "1.1.0",
+  "generated_at_utc": "2026-03-08T05:26:56Z",
+  "inbox_root": "C:\\Users\\alanh\\AppData\\Local\\Temp\\zip_inbox_failure_smoke_dataset",
+  "projects": [
+    {
+      "project_slug": "sample_project",
+      "project_state": "blocked",
+      "validation_status": "fail",
+      "install_plan_eligible": false,
+      "sequence_status": {
+        "is_contiguous": false,
+        "present_sequences": [
+          1,
+          3
+        ],
+        "missing_sequences": [
+          2
+        ],
+        "duplicate_sequences": []
+      },
+      "findings": [
+        "Missing sequences detected: 2"
+      ],
+      "package_counts": {
+        "inbox": 2,
+        "processed": 0,
+        "failed": 0,
+        "quarantined": 0
+      },
+      "packages": [
+        {
+          "sequence": 1,
+          "project_slug": "sample_project",
+          "package_slug": "core",
+          "filename": "zip1_sample_project_core.zip",
+          "source_zip_file": "zip1_sample_project_core.zip",
+          "relative_path": "sample_project/zip1_sample_project_core.zip",
+          "sha256": "90f9a3151281325c273c1757e1038a7b969039f74620e2eeb178ffcb4c0f651e",
+          "status": "pending",
+          "validation_status": "fail",
+          "install_plan_eligible": false,
+          "archive_state": "inbox",
+          "archive_path": null,
+          "size_bytes": 152,
+          "findings": [
+            "Missing sequences detected: 2"
+          ],
+          "last_seen_utc": "2026-03-08T05:22:34Z"
+        },
+        {
+          "sequence": 3,
+          "project_slug": "sample_project",
+          "package_slug": "validation",
+          "filename": "zip3_sample_project_validation.zip",
+          "source_zip_file": "zip3_sample_project_validation.zip",
+          "relative_path": "sample_project/zip3_sample_project_validation.zip",
+          "sha256": "cde3ecc4051e9c6e1a75b5a64162ada75f80e1ba1db48de397489b68a3a5dc6a",
+          "status": "pending",
+          "validation_status": "fail",
+          "install_plan_eligible": false,
+          "archive_state": "inbox",
+          "archive_path": null,
+          "size_bytes": 166,
+          "findings": [
+            "Missing sequences detected: 2"
+          ],
+          "last_seen_utc": "2026-03-08T05:22:34Z"
+        }
+      ]
+    }
+  ],
+  "invalid_zip_files": [],
+  "validation_summary": {
+    "project_count": 1,
+    "zip_count": 2,
+    "error_count": 1,
+    "warning_count": 0
+  },
+  "validation_passed": false
+}

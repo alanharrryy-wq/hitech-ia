@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Archive Manifest",
+  "type": "object",
+  "required": [
+    "archive_manifest_version",
+    "generated_at_utc",
+    "project_slug",
+    "archive_state",
+    "archive_folder",
+    "moved",
+    "skipped"
+  ],
+  "properties": {
+    "archive_manifest_version": {"type": "string"},
+    "generated_at_utc": {"type": "string"},
+    "project_slug": {"type": "string"},
+    "archive_state": {
+      "type": "string",
+      "enum": ["processed", "failed", "quarantine"]
+    },
+    "archive_folder": {
+      "type": ["string", "null"]
+    },
+    "requested_sequences": {
+      "type": "array",
+      "items": {"type": "integer", "minimum": 1}
+    },
+    "requested_filenames": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^zip[1-9][0-9]*_[a-z0-9]+(?:_[a-z0-9]+)*_[a-z0-9]+(?:_[a-z0-9]+)*\\.zip$"
+      }
+    },
+    "moved": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sequence", "filename", "from", "to"],
+        "properties": {
+          "sequence": {"type": "integer", "minimum": 1},
+          "filename": {
+            "type": "string",
+            "pattern": "^zip[1-9][0-9]*_[a-z0-9]+(?:_[a-z0-9]+)*_[a-z0-9]+(?:_[a-z0-9]+)*\\.zip$"
+          },
+          "from": {"type": "string"},
+          "to": {"type": "string"}
+        }
+      }
+    },
+    "skipped": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

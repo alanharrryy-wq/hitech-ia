@@ -1,0 +1,10 @@
+{
+  "request_version": "1.0.0",
+  "project_slug": "ui_observability",
+  "mode": "dry_run",
+  "force_reapply": false,
+  "specific_sequences": [
+    1,
+    2
+  ]
+}

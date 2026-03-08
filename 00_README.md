@@ -30,10 +30,11 @@ This repository stores installable ZIP modules, contracts, prompts, run reports,
 
 ## Primary workflow
 1. Store or version installable ZIP artifacts under `02_modules/`.
-2. Store implementation contracts and repo laws under `01_contracts/`.
-3. Store reusable Codex prompts under `03_prompts/`.
-4. Store historical execution outputs under `04_runs/` and `05_reports/`.
-5. Validate structure and manifests with scripts under `06_scripts/`.
+2. Download future intake ZIPs directly into `02_modules/_zip_inbox/<project_slug>/` using `zip<sequence>_<project_slug>_<package_slug>.zip`.
+3. Store implementation contracts and repo laws under `01_contracts/`.
+4. Store reusable Codex prompts under `03_prompts/`.
+5. Store historical execution outputs under `04_runs/` and `05_reports/`.
+6. Validate structure and manifests with scripts under `06_scripts/`.
 
 ## Non-goals
 - Product runtime code.

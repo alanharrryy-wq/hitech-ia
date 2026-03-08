@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Target Map",
+  "type": "object",
+  "required": [
+    "project_slug",
+    "destinations"
+  ],
+  "properties": {
+    "project_slug": {
+      "type": "string"
+    },
+    "destinations": {
+      "type": "object",
+      "required": [
+        "contract_repo",
+        "runtime_repo"
+      ],
+      "properties": {
+        "contract_repo": {
+          "type": "object"
+        },
+        "runtime_repo": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

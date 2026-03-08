@@ -1,0 +1,8 @@
+{
+  "inbox_root": "02_modules/_zip_inbox",
+  "projects": [
+    "ui_observability",
+    "data_pipeline",
+    "build_observer"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "project_slug": "ui_observability",
+  "destinations": {
+    "contract_repo": {
+      "contracts_path": "01_contracts/ui_observability",
+      "schemas_path": "08_schemas/ui_observability",
+      "examples_path": "09_examples/ui_observability"
+    },
+    "runtime_repo": {
+      "tools_path": "tools/ui-observability",
+      "tests_path": "tests/ui-observability"
+    }
+  }
+}

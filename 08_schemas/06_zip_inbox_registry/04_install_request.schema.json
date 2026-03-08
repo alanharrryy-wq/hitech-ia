@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Install Request",
+  "type": "object",
+  "required": [
+    "request_version",
+    "project_slug",
+    "mode"
+  ],
+  "properties": {
+    "request_version": {
+      "type": "string"
+    },
+    "project_slug": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "dry_run",
+        "apply"
+      ]
+    },
+    "force_reapply": {
+      "type": "boolean"
+    },
+    "specific_sequences": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
+    }
+  }
+}

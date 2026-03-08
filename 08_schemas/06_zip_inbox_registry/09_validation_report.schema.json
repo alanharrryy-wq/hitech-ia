@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZIP Inbox Validation Report",
+  "type": "object",
+  "required": [
+    "validation_schema_version",
+    "generated_at",
+    "generated_at_utc",
+    "inbox_root",
+    "valid",
+    "summary",
+    "errors",
+    "warnings",
+    "projects_detected",
+    "projects"
+  ],
+  "properties": {
+    "validation_schema_version": {"type": "string"},
+    "generated_at": {"type": "string"},
+    "generated_at_utc": {"type": "string"},
+    "inbox_root": {"type": "string"},
+    "valid": {"type": "boolean"},
+    "summary": {
+      "type": "object",
+      "required": ["project_count", "zip_count", "error_count", "warning_count"],
+      "properties": {
+        "project_count": {"type": "integer", "minimum": 0},
+        "zip_count": {"type": "integer", "minimum": 0},
+        "error_count": {"type": "integer", "minimum": 0},
+        "warning_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "errors": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "projects_detected": {"type": "array", "items": {"type": "string"}},
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "project_slug",
+          "folder",
+          "manifest_present",
+          "zip_count",
+          "sequence_status",
+          "valid",
+          "errors",
+          "warnings",
+          "packages"
+        ],
+        "properties": {
+          "project_slug": {"type": "string"},
+          "folder": {"type": "string"},
+          "manifest_present": {"type": "boolean"},
+          "zip_count": {"type": "integer", "minimum": 0},
+          "sequence_status": {
+            "type": "object",
+            "required": ["is_contiguous", "present_sequences", "missing_sequences", "duplicate_sequences"],
+            "properties": {
+              "is_contiguous": {"type": "boolean"},
+              "present_sequences": {"type": "array", "items": {"type": "integer"}},
+              "missing_sequences": {"type": "array", "items": {"type": "integer"}},
+              "duplicate_sequences": {"type": "array", "items": {"type": "integer"}}
+            }
+          },
+          "valid": {"type": "boolean"},
+          "errors": {"type": "array", "items": {"type": "string"}},
+          "warnings": {"type": "array", "items": {"type": "string"}},
+          "packages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["filename", "sequence", "project_slug", "package_slug", "relative_path"],
+              "properties": {
+                "filename": {
+                  "type": "string",
+                  "pattern": "^zip[1-9][0-9]*_[a-z0-9]+(?:_[a-z0-9]+)*_[a-z0-9]+(?:_[a-z0-9]+)*\\.zip$"
+                },
+                "sequence": {"type": "integer", "minimum": 1},
+                "project_slug": {"type": "string"},
+                "package_slug": {"type": "string"},
+                "relative_path": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "invalid_zip_files": {"type": "array", "items": {"type": "string"}}
+  }
+}

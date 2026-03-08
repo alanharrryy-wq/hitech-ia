@@ -3,6 +3,16 @@
 ## Purpose
 Define the installable unit format used by `hitech-ia` for Codex-driven delivery.
 
+## Canonical filename convention
+Installable ZIP artifacts must follow:
+
+`zip<sequence>_<project_slug>_<package_slug>.zip`
+
+Examples:
+- `zip1_ui_observability_core.zip`
+- `zip2_ui_observability_rules_reporting.zip`
+- `zip3_ui_observability_graph_history.zip`
+
 ## Canonical package shape
 Each module ZIP should contain:
 
@@ -37,7 +47,7 @@ package/
 8. Acceptance docs must prefer smoke tests before heavy suites.
 
 ## Recommended module partitioning
-- `01_core.zip`: reusable base implementation
-- `02_integration.zip`: target-specific wiring
-- `03_tests.zip`: validation and smoke additions
-- `04_docs.zip`: optional extra docs only when separated on purpose
+- `zip1_<project_slug>_core.zip`: reusable base implementation
+- `zip2_<project_slug>_integration.zip`: target-specific wiring
+- `zip3_<project_slug>_tests.zip`: validation and smoke additions
+- `zip4_<project_slug>_docs.zip`: optional reference-only payload

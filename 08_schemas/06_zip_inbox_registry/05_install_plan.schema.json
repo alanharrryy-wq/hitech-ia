@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Install Plan",
+  "type": "object",
+  "required": [
+    "plan_version",
+    "generated_at_utc",
+    "project_slug",
+    "mode",
+    "plan_status",
+    "install_plan_eligible",
+    "packages",
+    "actions"
+  ],
+  "properties": {
+    "plan_version": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "project_slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["dry_run", "apply"]
+    },
+    "plan_status": {
+      "type": "string",
+      "enum": ["ready", "blocked"]
+    },
+    "install_plan_eligible": {
+      "type": "boolean"
+    },
+    "blocked_reasons": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "sequence_status": {
+      "type": "object"
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "Registry Entry",
+        "type": "object",
+        "required": [
+          "sequence",
+          "project_slug",
+          "package_slug",
+          "filename",
+          "source_zip_file",
+          "sha256",
+          "status",
+          "validation_status",
+          "install_plan_eligible",
+          "archive_state"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "project_slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "package_slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "filename": {
+            "type": "string",
+            "pattern": "^zip[1-9][0-9]*_[a-z0-9]+(?:_[a-z0-9]+)*_[a-z0-9]+(?:_[a-z0-9]+)*\\.zip$"
+          },
+          "source_zip_file": {
+            "type": "string",
+            "pattern": "^zip[1-9][0-9]*_[a-z0-9]+(?:_[a-z0-9]+)*_[a-z0-9]+(?:_[a-z0-9]+)*\\.zip$"
+          },
+          "relative_path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "validated",
+              "planned",
+              "applied",
+              "processed",
+              "failed",
+              "quarantined"
+            ]
+          },
+          "validation_status": {
+            "type": "string",
+            "enum": ["pass", "fail"]
+          },
+          "install_plan_eligible": {
+            "type": "boolean"
+          },
+          "archive_state": {
+            "type": "string",
+            "enum": ["inbox", "processed", "failed", "quarantined"]
+          },
+          "size_bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "findings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "archive_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "last_seen_utc": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["step", "action"],
+        "properties": {
+          "step": {"type": "integer", "minimum": 1},
+          "action": {"type": "string"}
+        }
+      }
+    },
+    "quality_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "routing_model": {
+      "type": "object"
+    }
+  }
+}

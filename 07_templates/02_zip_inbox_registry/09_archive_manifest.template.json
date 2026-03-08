@@ -1,0 +1,11 @@
+{
+  "archive_manifest_version": "1.1.0",
+  "generated_at_utc": "<timestamp>",
+  "project_slug": "<project_slug>",
+  "archive_state": "processed",
+  "archive_folder": "02_modules/_zip_inbox/<project_slug>/_processed/<run_id>",
+  "requested_sequences": [],
+  "requested_filenames": [],
+  "moved": [],
+  "skipped": []
+}

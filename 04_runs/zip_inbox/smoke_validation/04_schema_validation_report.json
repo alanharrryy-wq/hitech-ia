@@ -1,0 +1,63 @@
+{
+  "report_version": "1.0.0",
+  "generated_at_utc": "2026-03-08T05:27:03Z",
+  "schema_root": "F:\\repos\\hitech-ia\\08_schemas\\06_zip_inbox_registry",
+  "example_root": "F:\\repos\\hitech-ia\\09_examples\\06_zip_inbox_registry",
+  "all_valid": true,
+  "results": [
+    {
+      "schema": "01_project_manifest.schema.json",
+      "example": "01_project_manifest.example.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "03_registry.schema.json",
+      "example": "02_registry.example.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "04_install_request.schema.json",
+      "example": "03_install_request.example.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "05_install_plan.schema.json",
+      "example": "04_install_plan.example.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "06_install_report.schema.json",
+      "example": "05_install_report.example.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "07_target_map.schema.json",
+      "example": "06_target_map.example.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "08_inbox_index.schema.json",
+      "example": "07_inbox_index.example.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "09_validation_report.schema.json",
+      "example": "09_validation_report.example.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "schema": "10_archive_manifest.schema.json",
+      "example": "10_archive_manifest.example.json",
+      "valid": true,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "sequence": 1,
+  "project_slug": "<project_slug>",
+  "package_slug": "<package_slug>",
+  "filename": "zip1_<project_slug>_<package_slug>.zip",
+  "source_zip_file": "zip1_<project_slug>_<package_slug>.zip",
+  "relative_path": "<project_slug>/zip1_<project_slug>_<package_slug>.zip",
+  "sha256": "<sha256>",
+  "status": "pending",
+  "validation_status": "pass",
+  "install_plan_eligible": false,
+  "archive_state": "inbox",
+  "archive_path": null,
+  "size_bytes": 0,
+  "findings": [],
+  "last_seen_utc": "<timestamp>"
+}

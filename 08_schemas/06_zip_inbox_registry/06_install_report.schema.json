@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Install Report",
+  "type": "object",
+  "required": [
+    "report_version",
+    "project_slug",
+    "result",
+    "started_at_utc",
+    "finished_at_utc"
+  ],
+  "properties": {
+    "report_version": {
+      "type": "string"
+    },
+    "project_slug": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "partial"
+      ]
+    },
+    "started_at_utc": {
+      "type": "string"
+    },
+    "finished_at_utc": {
+      "type": "string"
+    },
+    "applied_sequences": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "archived_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "archive_manifest_version": "1.1.0",
+  "generated_at_utc": "2026-03-08T00:00:00Z",
+  "project_slug": "ui_observability",
+  "archive_state": "processed",
+  "archive_folder": "02_modules/_zip_inbox/ui_observability/_processed/20260308T000000Z",
+  "requested_sequences": [1, 2],
+  "requested_filenames": [],
+  "moved": [
+    {
+      "sequence": 1,
+      "filename": "zip1_ui_observability_core.zip",
+      "from": "02_modules/_zip_inbox/ui_observability/zip1_ui_observability_core.zip",
+      "to": "02_modules/_zip_inbox/ui_observability/_processed/20260308T000000Z/zip1_ui_observability_core.zip"
+    },
+    {
+      "sequence": 2,
+      "filename": "zip2_ui_observability_rules_reporting.zip",
+      "from": "02_modules/_zip_inbox/ui_observability/zip2_ui_observability_rules_reporting.zip",
+      "to": "02_modules/_zip_inbox/ui_observability/_processed/20260308T000000Z/zip2_ui_observability_rules_reporting.zip"
+    }
+  ],
+  "skipped": []
+}

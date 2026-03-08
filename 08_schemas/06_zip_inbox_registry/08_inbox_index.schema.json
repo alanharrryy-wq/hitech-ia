@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Inbox Index",
+  "type": "object",
+  "required": [
+    "inbox_root",
+    "projects"
+  ],
+  "properties": {
+    "inbox_root": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

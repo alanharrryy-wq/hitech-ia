@@ -1,0 +1,62 @@
+{
+  "manifest_version": "1.0.0",
+  "project_slug": "ui_observability",
+  "targets": {
+    "contract_repo": {
+      "contracts_path": "01_contracts/ui_observability",
+      "schemas_path": "08_schemas/ui_observability",
+      "examples_path": "09_examples/ui_observability",
+      "reports_path": "05_reports/ui_observability"
+    },
+    "runtime_repo": {
+      "tools_path": "tools/ui-observability",
+      "tests_path": "tests/ui-observability"
+    }
+  },
+  "routing_rules": [
+    {
+      "selector": "contracts/**",
+      "destination": "contract_repo.contracts_path"
+    },
+    {
+      "selector": "schemas/**",
+      "destination": "contract_repo.schemas_path"
+    },
+    {
+      "selector": "examples/**",
+      "destination": "contract_repo.examples_path"
+    },
+    {
+      "selector": "runtime/**",
+      "destination": "runtime_repo.tools_path"
+    },
+    {
+      "selector": "tests/**",
+      "destination": "runtime_repo.tests_path"
+    }
+  ],
+  "quality_gates": {
+    "preflight": [
+      "filename_valid",
+      "sequence_valid",
+      "no_duplicate_sequences",
+      "manifest_present",
+      "routing_rules_valid"
+    ],
+    "post_apply": [
+      "required_targets_exist",
+      "tests_passed",
+      "report_written",
+      "ledger_written"
+    ]
+  },
+  "archive_policy": {
+    "processed_folder": "_processed",
+    "failed_folder": "_failed",
+    "keep_original_filename": true
+  },
+  "lock_policy": {
+    "lock_filename": ".install.lock",
+    "single_active_apply": true
+  }
+}

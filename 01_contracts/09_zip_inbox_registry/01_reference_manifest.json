@@ -1,0 +1,22 @@
+{
+  "pack_name": "neutral_zip_inbox_registry_reference_pack",
+  "pack_version": "1.0.0",
+  "purpose": "Neutral operating reference for ZIP inbox intake, internal registry, install planning, routing, validation, and archival.",
+  "canonical_filename_pattern": "zip<sequence>_<project_slug>_<package_slug>.zip",
+  "repo_roles": {
+    "contract_repo": "contracts, inbox, schemas, examples, prompts, registry and reports",
+    "runtime_repo": "tools, agents, cli, analyzers, integrations and tests"
+  },
+  "included_sections": [
+    "operating_model",
+    "contracts",
+    "registry",
+    "schemas",
+    "examples",
+    "templates",
+    "scripts_reference",
+    "runbooks",
+    "acceptance",
+    "applied_improvements"
+  ]
+}
