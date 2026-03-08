@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260307T120000Z_ui_observability",
+  "project_slug": "ui_observability",
+  "started_at": "2026-03-07T12:00:00Z",
+  "finished_at": "2026-03-07T12:01:30Z",
+  "status": "success",
+  "validated_sequences": [1],
+  "applied_packages": ["core"],
+  "quarantined_packages": [],
+  "failed_packages": [],
+  "tests": [
+    {
+      "name": "smoke-ui",
+      "type": "command",
+      "command": "pnpm test:smoke",
+      "started_at": "2026-03-07T12:01:00Z",
+      "finished_at": "2026-03-07T12:01:25Z",
+      "exit_code": 0,
+      "required": true,
+      "status": "passed",
+      "stdout_path": "04_runs/zip_inbox/20260307T120000Z_ui_observability/logs/smoke-ui.stdout.txt",
+      "stderr_path": "04_runs/zip_inbox/20260307T120000Z_ui_observability/logs/smoke-ui.stderr.txt"
+    }
+  ],
+  "operations": [
+    {
+      "package_slug": "core",
+      "source": "src/components/ObservabilityPanel.tsx",
+      "destination": "apps/web/src/components/ObservabilityPanel.tsx",
+      "action": "copy",
+      "result": "applied",
+      "duration_ms": 8
+    }
+  ],
+  "summary": {
+    "zip_count": 1,
+    "applied_count": 1,
+    "failed_count": 0,
+    "quarantined_count": 0
+  }
+}

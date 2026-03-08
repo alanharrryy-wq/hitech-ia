@@ -1,0 +1,23 @@
+{
+  "bundle_name": "hitech_ia_unicodex_docs_pack",
+  "created_at_utc": "2026-03-08T05:54:04Z",
+  "purpose": "Best-effort documentation pack to complete the HITECH-IA ZIP inbox automation with UniCodex",
+  "file_count": 15,
+  "files": [
+    "README_UNICODEX_HANDOFF.md",
+    "docs/zip_inbox/ACCEPTANCE_CRITERIA.md",
+    "docs/zip_inbox/ARCHIVE_POLICY.md",
+    "docs/zip_inbox/CONTRACT.md",
+    "docs/zip_inbox/FAILURE_RECOVERY.md",
+    "docs/zip_inbox/MANIFEST_SPEC.md",
+    "docs/zip_inbox/REGISTRY_SCHEMA.md",
+    "docs/zip_inbox/REPORT_SCHEMA.md",
+    "docs/zip_inbox/RUNBOOK.md",
+    "docs/zip_inbox/TEST_PLAN.md",
+    "docs/zip_inbox/TODO_FOR_UNICODEX.md",
+    "docs/zip_inbox/WIRING_SPEC.md",
+    "examples/install_plan.example.json",
+    "examples/manifest.example.json",
+    "examples/report.example.json"
+  ]
+}

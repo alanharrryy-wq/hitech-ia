@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260307T120000Z_ui_observability",
+  "project_slug": "ui_observability",
+  "steps": [
+    {
+      "type": "validate_inbox",
+      "status": "pending"
+    },
+    {
+      "type": "build_registry",
+      "status": "pending"
+    },
+    {
+      "type": "extract_zip",
+      "sequence": 1,
+      "package_slug": "core",
+      "status": "pending"
+    },
+    {
+      "type": "apply_targets",
+      "sequence": 1,
+      "package_slug": "core",
+      "status": "pending"
+    },
+    {
+      "type": "run_tests",
+      "sequence": 1,
+      "package_slug": "core",
+      "status": "pending"
+    },
+    {
+      "type": "archive_processed",
+      "status": "pending"
+    }
+  ]
+}

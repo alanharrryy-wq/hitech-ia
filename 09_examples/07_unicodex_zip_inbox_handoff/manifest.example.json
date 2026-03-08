@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "project_slug": "ui_observability",
+  "package_slug": "core",
+  "sequence": 1,
+  "package_version": "0.1.0",
+  "kind": "module",
+  "wiring_mode": "copy",
+  "targets": [
+    {
+      "source": "src/components/ObservabilityPanel.tsx",
+      "destination": "apps/web/src/components/ObservabilityPanel.tsx",
+      "mode": "overwrite",
+      "required": true
+    },
+    {
+      "source": "src/lib/observability.ts",
+      "destination": "apps/web/src/lib/observability.ts",
+      "mode": "overwrite",
+      "required": true
+    }
+  ],
+  "tests": [
+    {
+      "name": "smoke-ui",
+      "type": "command",
+      "command": "pnpm test:smoke",
+      "required": true
+    }
+  ],
+  "depends_on": [],
+  "notes": "Minimal example manifest"
+}

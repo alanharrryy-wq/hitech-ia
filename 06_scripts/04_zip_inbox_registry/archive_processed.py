@@ -3,109 +3,93 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from archive_quarantine import move_processed_zip
 from common import (
-    archive_zip,
-    collect_active_zip_infos,
+    collect_active_zip_artifacts,
+    inbox_root_from_repo,
     parse_sequences,
-    resolve_inbox_root,
+    repo_root_from_arg,
+    utc_datetime_now,
     utc_now,
     write_json,
 )
 
 
 def archive_processed(
-    inbox_root: Path,
-    project_slug: str,
     *,
+    repo_root: Path,
+    project_slug: str,
     run_id: str,
     sequences: list[int] | None = None,
-    filenames: list[str] | None = None,
+    zip_names: list[str] | None = None,
 ) -> tuple[dict, int]:
-    slug = project_slug.lower()
-    project_dir = inbox_root / slug
+    inbox_root = inbox_root_from_repo(repo_root)
+    project_dir = inbox_root / project_slug
+    when = utc_datetime_now()
 
     requested_sequences = sorted(set(sequences or []))
-    requested_filenames = sorted(set(filenames or []), key=str.lower)
+    requested_names = sorted(set(zip_names or []), key=str.lower)
 
     moved: list[dict] = []
     skipped: list[str] = []
 
     if not project_dir.exists():
-        payload = {
-            "archive_manifest_version": "1.1.0",
-            "generated_at_utc": utc_now(),
-            "project_slug": slug,
-            "archive_state": "processed",
-            "archive_folder": None,
-            "requested_sequences": requested_sequences,
-            "requested_filenames": requested_filenames,
-            "moved": [],
-            "skipped": [f"Project folder does not exist: {project_dir}"],
-        }
-        return payload, 1
+        skipped.append(f"Project inbox folder not found: {project_dir}")
+    else:
+        artifacts = collect_active_zip_artifacts(project_dir, inbox_root)
+        if requested_sequences:
+            artifacts = [item for item in artifacts if item.sequence in requested_sequences]
+        if requested_names:
+            wanted = {value.lower() for value in requested_names}
+            artifacts = [item for item in artifacts if item.filename.lower() in wanted]
 
-    candidates = collect_active_zip_infos(project_dir, inbox_root)
-    if requested_sequences:
-        candidates = [item for item in candidates if item.sequence in requested_sequences]
-    if requested_filenames:
-        wanted = {name.lower() for name in requested_filenames}
-        candidates = [item for item in candidates if item.filename.lower() in wanted]
+        for artifact in artifacts:
+            moved.append(
+                move_processed_zip(
+                    repo_root=repo_root,
+                    project_slug=project_slug,
+                    source_zip=artifact.path,
+                    run_id=run_id,
+                    when=when,
+                )
+            )
 
-    archive_folder = project_dir / "_processed" / run_id
-    for item in candidates:
-        source = project_dir / item.filename
-        destination = archive_folder / item.filename
-        archive_zip(source, destination)
-        moved.append(
-            {
-                "sequence": item.sequence,
-                "filename": item.filename,
-                "from": str(source),
-                "to": str(destination),
-            }
-        )
-
-    if requested_sequences and not moved:
-        skipped.append("No ZIP matched requested sequence filters")
-    if requested_filenames and not moved:
-        skipped.append("No ZIP matched requested filename filters")
+        if not artifacts:
+            skipped.append("No ZIP artifacts matched filters")
 
     payload = {
-        "archive_manifest_version": "1.1.0",
-        "generated_at_utc": utc_now(),
-        "project_slug": slug,
-        "archive_state": "processed",
-        "archive_folder": str(archive_folder),
+        "schema_version": "1.0",
+        "generated_at": utc_now(),
+        "run_id": run_id,
+        "project_slug": project_slug,
+        "state": "processed",
         "requested_sequences": requested_sequences,
-        "requested_filenames": requested_filenames,
+        "requested_zip_names": requested_names,
         "moved": moved,
         "skipped": skipped,
     }
-    exit_code = 0 if moved or (not requested_sequences and not requested_filenames) else 1
-    return payload, exit_code
+    code = 0 if moved else 1
+    return payload, code
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Archive successfully processed ZIP packages")
-    parser.add_argument("--repo-root", required=True)
-    parser.add_argument("--project-slug", required=True)
+    parser = argparse.ArgumentParser(description="Archive processed ZIP artifacts to canonical archive root")
+    parser.add_argument("--repo-root", default=".")
+    parser.add_argument("--project", required=True)
+    parser.add_argument("--run-id", required=True)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--inbox-root", help="Optional inbox override path")
-    parser.add_argument("--run-id", help="Archive run id folder (default UTC timestamp)")
     parser.add_argument("--sequences", help="Comma-separated sequence filter")
-    parser.add_argument("--filenames", nargs="*", help="Explicit filename filter")
+    parser.add_argument("--zip-names", nargs="*", help="Specific ZIP filename filter")
     args = parser.parse_args()
 
-    repo_root = Path(args.repo_root).resolve()
-    inbox_root = resolve_inbox_root(repo_root, args.inbox_root)
-    run_id = args.run_id or utc_now().replace(":", "").replace("-", "")
+    repo_root = repo_root_from_arg(args.repo_root)
 
     payload, code = archive_processed(
-        inbox_root,
-        args.project_slug,
-        run_id=run_id,
+        repo_root=repo_root,
+        project_slug=args.project,
+        run_id=args.run_id,
         sequences=parse_sequences(args.sequences),
-        filenames=args.filenames,
+        zip_names=args.zip_names,
     )
     write_json(Path(args.output), payload)
 
